@@ -39,6 +39,7 @@ jobs:
     - name: Build and publish container image with tag
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
+        image: nginx
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
