@@ -36,11 +36,9 @@ jobs:
     - uses: actions/checkout@v2
       name: Check out code
 
-    - name: Build and publish container image with tag
+    - name: Build and publish container image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: nginx
         registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
         dockerfile: ./Dockerfile
