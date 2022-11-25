@@ -41,6 +41,7 @@ jobs:
       with:
         image: g1-qwerty
         registry: ghcr.io
+        tags: v1, latest
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
         dockerfile: ./Dockerfile
