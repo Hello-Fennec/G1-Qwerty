@@ -1,0 +1,567 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@600&family=Itim&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Taviraj&display=swap%27");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Cinzel", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #1e1e1c;
+}
+
+body {
+  background-color: #243b1f;
+}
+
+.sidebar {
+  position: fixed;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "left right right";
+  width: 100%;
+  z-index: 3;
+}
+
+.logo,
+.navbar {
+  display: flex;
+}
+a.nav-func {
+  font-size: 30px;
+}
+
+.logo {
+  margin-left: 10px;
+  grid-area: left;
+}
+
+.logo p {
+  color: #fff;
+  padding-top: 35px;
+  padding-left: 15px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.navbar {
+  grid-area: right;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5rem;
+  margin-right: 30px;
+}
+
+.title,
+.nav-func {
+  color: #ffffff;
+}
+
+.stage1 {
+  display: grid;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    ". . . . . ."
+    ". . . . . ."
+    "title title title title title title"
+    "title title title title title title"
+    ". basi basi basi basi ."
+    ". basi basi basi basi .";
+}
+
+.home-title {
+  grid-area: title;
+  text-align: center;
+  z-index: 3;
+  font-size: 120px;
+  color: #ffffff;
+  letter-spacing: 2rem;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.st1-l1 {
+  z-index: 2;
+}
+
+.st1-l2 {
+  z-index: -1;
+}
+
+.basilisk {
+  grid-area: basi;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition-timing-function: ease;
+  animation: slide 3s infinite;
+}
+
+.basilisk img {
+  width: 100%;
+  height: 100%;
+}
+
+.link-stage {
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.stage2 {
+  display: grid;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 5rem;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-areas:
+    ". . . . . . . ."
+    "fg fg fg fg tbox tbox tbox tbox"
+    "fg fg fg fg tbox tbox tbox tbox"
+    "fg fg fg fg tbox tbox tbox tbox"
+    "fg fg fg fg tbox tbox tbox tbox"
+    "fg fg fg fg tbox tbox tbox tbox"
+    "fg fg fg fg tbox tbox tbox tbox"
+    ". . . . . . . .";
+}
+
+.frog {
+  width: 100%;
+  height: 100%;
+  grid-area: fg;
+  z-index: 2;
+  overflow: hidden;
+  transition-timing-function: ease-in-out;
+  animation: floating 3s infinite;
+}
+
+.frog img {
+  width: 100%;
+  height: 100%;
+}
+
+.text-box {
+  grid-area: tbox;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(72, 141, 61, 0.5);
+  border: 5px solid #ffffff;
+  border-radius: 50px;
+  align-items: center;
+  padding: 2rem;
+  color: #ffffff;
+  gap: 1rem;
+  z-index: 2;
+}
+
+.text-box h2 {
+  font-size: 40px;
+}
+
+.text-box p {
+  font-size: 20px;
+  font-family: "Taviraj", serif;
+}
+
+.stage3 {
+  display: grid;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 5rem;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    ". . . . . ."
+    "sm sm sm tbox tbox tbox"
+    "sm sm sm tbox tbox tbox"
+    "sm sm sm tbox tbox tbox"
+    "sm sm sm tbox tbox tbox"
+    ". . . . . .";
+}
+
+.symbol {
+  width: 100%;
+  height: 100%;
+  grid-area: sm;
+  z-index: 2;
+  overflow: hidden;
+  transition-timing-function: ease-in-out;
+  animation: floating 3s infinite;
+}
+
+.symbol img {
+  width: 100%;
+  height: 100%;
+}
+
+.stage4 {
+  display: grid;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-areas:
+    "basis basis basis basis basis . . . . ."
+    "basis basis basis basis basis . tb1 tb1 tb1 ."
+    "basis basis basis basis basis . tb1 tb1 tb1 ."
+    "basis basis basis basis basis . . . . ."
+    "basis basis basis basis basis . . tb2 tb2 ."
+    "basis basis basis basis basis . . tb2 tb2 . "
+    "basis basis basis basis basis . . . . . "
+    "basis basis basis basis basis . . . . .";
+}
+
+.st4-l1 {
+  z-index: 2;
+}
+
+.basi-st4 {
+  grid-area: basis;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  transition-timing-function: ease-in-out;
+  animation: floating 3s infinite;
+}
+
+.basi-st4 img {
+  width: 100%;
+  height: 100%;
+}
+
+.text-box1 {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(72, 141, 61, 0.5);
+  border: 5px solid #ffffff;
+  border-radius: 50px;
+  align-items: center;
+  padding: 2rem;
+  color: #ffffff;
+  gap: 1rem;
+  z-index: 2;
+  grid-area: tb1;
+  z-index: 3;
+}
+
+.text-box2 {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(72, 141, 61, 0.5);
+  border: 5px solid #ffffff;
+  border-radius: 50px;
+  align-items: center;
+  padding: 2rem;
+  color: #ffffff;
+  gap: 1rem;
+  z-index: 2;
+  grid-area: tb2;
+  z-index: 3;
+}
+
+.vn-fall {
+  width: 100%;
+  height: 100%;
+}
+
+.stage5 {
+  display: grid;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  grid-template-areas:
+    ". . . . . . . . . . . ."
+    ". tw1 tw1 . re re re re . . . ."
+    ". . . . re re re re . . . ."
+    ". tw2 tw2 . re re re re . . . ."
+    ". . . . re re re re . . . ."
+    ". tw3 tw3 . re re re re . . . ."
+    ". . . . . . . . . . . ."
+    ". . des des des des des des des des . ."
+    ". . . . . . . . . . . .";
+  grid-gap: 20px;
+}
+
+.Reflect,
+.Rooster,
+.Weasel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+.Reflect {
+  grid-area: tw1;
+}
+
+.Rooster {
+  grid-area: tw2;
+}
+
+.Weasel {
+  grid-area: tw3;
+}
+
+.Reflect button,
+.Rooster button,
+.Weasel button {
+  background-color: #10850a;
+  border-radius: 30px;
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+
+.weak {
+  width: 100%;
+  height: 100%;
+  grid-area: re;
+  z-index: 2;
+  position: relative;
+}
+
+.refl,
+.roos,
+.weas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.des-box {
+  grid-area: des;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  position: relative;
+  background-color: rgba(72, 141, 61, 0.5);
+  border: 3px solid #ffffff;
+  border-radius: 20px;
+}
+
+.refl-des,
+.roos-des,
+.weas-des {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.credit {
+  width: 100%;
+  height: 30vh;
+  background-color: #1e1e1c;
+  overflow: hidden;
+  display: grid;
+  padding: 20px 200px 20px 200px;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 20px;
+  grid-template-areas: "fe fe fe wd wd if if";
+}
+
+.front-end,
+.web-design,
+.infrastructure {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  justify-items: center;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.front-end {
+  grid-area: fe;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "ft ft ft"
+    "arm bai mei"
+    "arm bai mei"
+    "arm bai mei"
+    "arm bai mei"
+    "arm bai mei";
+}
+
+.web-design {
+  grid-area: wd;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "wt wt"
+    "nes kun"
+    "nes kun"
+    "nes kun"
+    "nes kun"
+    "nes kun";
+}
+
+.infrastructure {
+  grid-area: if;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "it it it it"
+    ". guy guy ."
+    ". guy guy ."
+    ". guy guy ."
+    ". guy guy ."
+    ". guy guy .";
+}
+
+.f-title,
+.w-title,
+.i-title {
+  color: #ffffff;
+  font-size: 40px;
+}
+
+.f-title {
+  grid-area: ft;
+}
+
+.w-title {
+  grid-area: wt;
+}
+
+.i-title {
+  grid-area: it;
+}
+
+.arm,
+.baitong,
+.meili,
+.nes,
+.kun,
+.guy {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.arm {
+  grid-area: arm;
+}
+
+.baitong {
+  grid-area: bai;
+}
+
+.meili {
+  grid-area: mei;
+}
+
+.nes {
+  grid-area: nes;
+}
+
+.kun {
+  grid-area: kun;
+}
+
+.guy {
+  grid-area: guy;
+}
+
+.credit img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+}
+
+.credit h3 {
+  overflow: hidden;
+  font-size: 25px;
+  color: #ffffff;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(5%);
+  }
+  50% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(5%);
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(10%);
+  }
+  50% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(10%);
+  }
+}
