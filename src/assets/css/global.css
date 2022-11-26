@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@600&family=Itim&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Taviraj&display=swap%27");
+
 *,
 *::after,
 *::before {
@@ -43,6 +44,7 @@ body {
 .navbar {
   display: flex;
 }
+
 a.nav-func {
   font-size: 30px;
 }
@@ -234,6 +236,7 @@ a.nav-func {
   position: relative;
   width: 100%;
   height: 100vh;
+  padding: 20px;
   overflow: hidden;
   justify-items: center;
   align-items: center;
@@ -241,13 +244,14 @@ a.nav-func {
   grid-template-rows: repeat(8, 1fr);
   grid-template-areas:
     "basis basis basis basis basis . . . . ."
-    "basis basis basis basis basis . tb1 tb1 tb1 ."
-    "basis basis basis basis basis . tb1 tb1 tb1 ."
+    "basis basis basis basis basis tb1 tb1 tb1 tb1 tb1"
+    "basis basis basis basis basis tb1 tb1 tb1 tb1 tb1"
     "basis basis basis basis basis . . . . ."
-    "basis basis basis basis basis . . tb2 tb2 ."
-    "basis basis basis basis basis . . tb2 tb2 . "
+    "basis basis basis basis basis tb2 tb2 tb2 tb2 tb2"
+    "basis basis basis basis basis tb2 tb2 tb2 tb2 tb2 "
     "basis basis basis basis basis . . . . . "
     "basis basis basis basis basis . . . . .";
+  grid-gap: 20px;
 }
 
 .st4-l1 {
@@ -368,6 +372,7 @@ a.nav-func {
   grid-area: re;
   z-index: 2;
   position: relative;
+  animation: floating 3s infinite;
 }
 
 .refl,
@@ -406,7 +411,7 @@ a.nav-func {
 
 .credit {
   width: 100%;
-  height: 30vh;
+  height: 35vh;
   background-color: #1e1e1c;
   overflow: hidden;
   display: grid;
@@ -565,3 +570,32 @@ a.nav-func {
     transform: translateX(10%);
   }
 }
+
+@media only screen and (max-width: 1400px) {
+  .logo a p,
+  a.nav-func,
+  .text-box h2,
+  .text-box1 h2,
+  .text-box2 h2 {
+    font-size: 25px;
+  }
+  .credit h2 {
+    font-size: 20px;
+  }
+  .text-box p,
+  .credit h3 {
+    font-size: 15px;
+  }
+  .text-box2 p,
+  .text-box1 p,
+  .des-box p {
+    font-size: 10px;
+  }
+  .credit {
+    height: 28vh;
+  }
+  .credit h2 {
+    font-size: 15px;
+  }
+}
+ß
